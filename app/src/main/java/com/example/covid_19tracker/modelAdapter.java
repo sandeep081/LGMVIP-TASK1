@@ -1,12 +1,14 @@
 package com.example.covid_19tracker;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -29,6 +31,7 @@ public class modelAdapter extends RecyclerView.Adapter<modelAdapter.ViewHolder> 
         View view = LayoutInflater.from(context).inflate(R.layout.statrelayout, parent, false);
         return new modelAdapter.ViewHolder(view);
     }
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Statemodel statemodel= statemodelArrayList.get(position);
